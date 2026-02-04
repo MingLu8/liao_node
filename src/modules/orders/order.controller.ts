@@ -6,7 +6,7 @@ import { LoggingInterceptor } from "../../common/interceptors/logging.intercepto
 export class OrderController {
   constructor(private readonly orderService: OrderService) {}
   @Post()
-  @UseInterceptors(LoggingInterceptor) // Approach 2: Scoped Binding
+  @UseInterceptors(LoggingInterceptor)
   async create(@Body() dto: CreateOrderDto) { return this.orderService.create(dto); }
 
   @Get(':id')
